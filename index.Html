@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- Documento principal de la portada; lang ayuda a lectores de pantalla y buscadores. -->
+<html lang="es">
+<head>
+    <!-- Codificación para que tildes y símbolos se muestren correctamente. -->
+    <meta charset="UTF-8">
+    <!-- Hace que el diseño se adapte al ancho de celulares y tabletas. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Color de la barra del navegador en dispositivos compatibles. -->
+    <meta name="theme-color" content="#f2f7f5">
+    <!-- Descripción que algunos buscadores muestran junto al resultado. Puedes cambiarla al definir el mensaje del centro. -->
+    <meta name="description" content="Conoce Quinesiomed y agenda tu próxima sesión.">
+    <!-- Texto de la pestaña del navegador. -->
+    <title>Quinesiomed | Bienestar y movimiento</title>
+    <!-- Hoja de estilos compartida por la portada y la agenda. -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="inicio">
+    <!-- Encabezado: cambia aquí el nombre y los enlaces principales del sitio. -->
+    <header class="barra-inicio">
+        <!-- El enlace del logo vuelve a esta portada; el carácter q es un símbolo temporal. -->
+        <a class="logo-inicio" href="index.Html" aria-label="Quinesiomed, inicio">
+             <img class="imagen-logo" src="logo.jpg" alt="Logo de Quinesiomed">
+                <span>quinesiomed</span>
+        </a>
+        <!-- Los dos primeros enlaces bajan a secciones de esta misma página (#id).
+             El último abre la página de agenda. -->
+        <nav class="nav-inicio" aria-label="Navegación principal">
+            <a href="#profesionales">Profesionales</a>
+            <a href="#terapias">Terapias</a>
+            <a class="nav-agenda" href="./agenda.html">Agendar sesión <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <!-- Contenido principal: las secciones aparecen en el mismo orden que se leen aquí. -->
+    <main>
+        <!-- Presentación principal o hero: título, breve introducción y acceso a la agenda. -->
+        <section class="hero-inicio">
+            <div class="hero-texto">
+                <span class="etiqueta-inicio"><span class="punto-verde"></span> CENTRO QUIROPRÁCTICO</span>
+                <h1>Muévete hacia<br>tu <em>bienestar.</em></h1>
+                <p>Un espacio para acompañarte en el cuidado de tu cuerpo. Pronto podrás conocer a nuestro equipo y las terapias disponibles.</p>
+                <div class="acciones-hero">
+                    <a class="boton-inicio" href="./agenda.html">Agendar una sesión <span aria-hidden="true">→</span></a>
+                    <a class="enlace-secundario" href="#centro">Conocer el centro</a>
+                </div>
+            </div>
+            <!-- Ilustración decorativa construida con CSS; sus formas se editan en styles.css. -->
+            <div class="hero-visual" aria-label="Ilustración abstracta de movimiento y equilibrio" role="img">
+                <div class="arco arco-uno"></div>
+                <div class="arco arco-dos"></div>
+                <div class="figura-central"><span></span></div>
+                <div class="tarjeta-flotante"><span class="mini-icono" aria-hidden="true">✳</span><span>Bienestar<br>en movimiento</span></div>
+                <span class="visual-texto">CUIDADO · REHABILITACIÓN · BIENESTAR</span>
+            </div>
+            <div class="hero-decoracion" aria-hidden="true">✳</div>
+        </section>
+
+        <!-- Presentación breve del centro. El id centro es el destino del enlace "Conocer el centro". -->
+        <section class="bloque-centro" id="centro">
+            <div class="bloque-centro-titulo">
+                <span class="etiqueta-inicio">QUINESIOMED</span>
+                <h2>Tu próximo paso<br>comienza aquí.</h2>
+            </div>
+            <p>Estamos preparando este espacio para compartir más sobre el centro, nuestro equipo profesional y las alternativas de atención. Mientras tanto, puedes revisar la agenda.</p>
+            <a class="flecha-redonda" href="./agenda.html" aria-label="Ir a agendar una sesión">↗</a>
+        </section>
+
+        <!-- Área preparada para reemplazar estos textos con perfiles profesionales reales. -->
+        <section class="seccion-futuro" id="profesionales">
+            <div class="seccion-cabecera">
+                <div><span class="etiqueta-inicio">EL EQUIPO</span><h2>Profesionales</h2></div>
+                <span class="proximamente">PRÓXIMAMENTE</span>
+            </div>
+            <div class="tarjetas-futuro">
+                <!-- Tarjeta de profesionales: se puede duplicar este article para agregar perfiles. -->
+                <article class="tarjeta-futuro">
+                    <span class="icono-futuro" aria-hidden="true">♧</span>
+                    <div><h3>Conoce a nuestros profesionales</h3><p>Esta sección tendrá sus perfiles, formación y áreas de atención.</p></div>
+                    <span class="numero-tarjeta">01</span>
+                </article>
+                <!-- Tarjeta de terapias. El id terapias permite que el menú salte directamente aquí. -->
+                <article class="tarjeta-futuro" id="terapias">
+                    <span class="icono-futuro icono-terapia" aria-hidden="true">⌁</span>
+                    <div><h3>Terapias y servicios</h3><p>Pronto encontrarás aquí información sobre las terapias disponibles en el centro.</p></div>
+                    <span class="numero-tarjeta">02</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Llamado final a reservar; conserva un acceso visible al calendario. -->
+        <section class="cierre-inicio">
+            <div><span class="etiqueta-inicio">RESERVA TU HORARIO</span><h2>¿Agendamos tu sesión?</h2></div>
+            <a class="boton-inicio boton-claro" href="./agenda.html">Ir a la agenda <span aria-hidden="true">→</span></a>
+        </section>
+    </main>
+
+    <!-- Pie de página: aquí puedes sumar contacto, redes sociales, dirección y horarios. -->
+    <footer class="pie-inicio"><a class="logo-inicio" href="index.Html"><span class="logo-simbolo" aria-hidden="true">q</span><span>quinesiomed</span></a><span>Centro quiropráctico · Agenda en línea</span><a class="acceso-secretaria" href="./secretaria.html">Acceso secretaria</a></footer>
+</body>
+</html>
