@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f8f7">
+    <title>Agendar una sesión | Quinesiomed</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="contenedor">
+        <header class="encabezado">
+            <div class="encabezado-superior">
+                <span class="marca">QUINESIOMED</span>
+                <a class="volver-inicio" href="./index.Html">← Volver al inicio</a>
+            </div>
+            <h1>Agenda tu sesión</h1>
+            <p>Elige un horario y reserva tu próxima atención.</p>
+        </header>
+
+        <section class="panel-agenda" aria-label="Agendar una sesión">
+            <form id="formulario-reserva" class="formulario">
+                <h2>Nueva reserva</h2>
+                <label for="rut-reserva">RUT del paciente</label>
+                <input id="rut-reserva" name="rut" type="text" inputmode="text" autocomplete="off" placeholder="12.345.678-5" required maxlength="12" aria-describedby="aviso-demo">
+
+                <label for="nombre">Nombre completo</label>
+                <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required maxlength="80">
+
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="Tu teléfono" required maxlength="30">
+
+                <div class="campos-horario">
+                    <div>
+                        <label for="fecha">Fecha</label>
+                        <input id="fecha" name="fecha" type="date" required>
+                    </div>
+                    <div>
+                        <label for="hora">Hora</label>
+                        <input id="hora" name="hora" type="time" required>
+                    </div>
+                </div>
+
+                <button class="boton-reservar" type="submit">Reservar sesión</button>
+                <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+            </form>
+
+            <section class="agenda" aria-labelledby="titulo-agenda">
+                <div class="agenda-titulo">
+                    <div>
+                        <span class="sobretitulo">PORTAL DEL PACIENTE</span>
+                        <h2 id="titulo-agenda">Gestiona tus sesiones</h2>
+                    </div>
+                    <span id="contador" class="contador">0</span>
+                </div>
+                <p class="ayuda-agenda">Ingresa tu RUT para consultar tus sesiones.</p>
+                <form id="formulario-usuario" class="formulario-usuario">
+                    <label for="rut-usuario">RUT</label>
+                    <div class="busqueda-usuario">
+                        <input id="rut-usuario" name="rut" type="text" inputmode="text" autocomplete="off" placeholder="12.345.678-5" required maxlength="12">
+                        <button type="submit" id="boton-consultar">Consultar</button>
+                    </div>
+                    <div id="grupo-codigo" class="grupo-codigo" hidden>
+                        <label for="codigo-verificacion">Código de verificación</label>
+                        <input id="codigo-verificacion" name="codigo" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="Código enviado a tu contacto registrado" maxlength="8">
+                    </div>
+                </form>
+                <p id="aviso-demo" class="aviso-demo">Modo de demostración: el RUT solo filtra datos guardados en este navegador. No ingreses datos reales ni publiques esta versión.</p>
+                <ul id="lista-reservas" class="lista-reservas"></ul>
+                <p id="estado-vacio" class="estado-vacio">Consulta con tu RUT para ver tus sesiones.</p>
+                <p class="nota-privacidad">Al publicar el sistema, la consulta requerirá verificar tu identidad.</p>
+            </section>
+        </section>
+        <footer>Quinesiomed <span aria-hidden="true">·</span> Atención con reserva previa <a class="acceso-secretaria" href="./secretaria.html">Acceso secretaria</a></footer>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
