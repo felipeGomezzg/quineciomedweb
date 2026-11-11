@@ -1,0 +1,224 @@
+/* Estilos exclusivos de Clinica.html; los estilos compartidos siguen en styles.css. */
+.pagina-clinica {
+    min-height: 100vh;
+    padding: 0 6.5%;
+    background: radial-gradient(ellipse at 18% 8%, #e1efea 0, transparent 37%), #f5f8f6;
+}
+
+.barra-clinica {
+    display: flex;
+    min-height: 88px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid #e4ece8;
+}
+
+.marca-clinica {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #214a43;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.marca-clinica img {
+    width: 42px;
+    height: 42px;
+    border-radius: 9px;
+    object-fit: contain;
+}
+
+.volver-clinica {
+    color: #397d72;
+    font-size: .86rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contenido-clinica {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+}
+
+.introduccion-clinica {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 68px 0 38px;
+    text-align: center;
+}
+
+.etiqueta-clinica {
+    color: #528078;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .15em;
+}
+
+.introduccion-clinica h1 {
+    margin: 14px 0;
+    color: #183b36;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.3rem);
+    letter-spacing: -.055em;
+    line-height: 1.1;
+}
+
+.introduccion-clinica p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #6e827d;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.consultas-clinica {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.tarjeta-consulta {
+    display: flex;
+    min-width: 0;
+    min-height: 360px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px;
+    border: 1px solid #dce9e3;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 14px 36px rgba(28, 67, 59, .07);
+}
+
+.numero-consulta {
+    color: #6b8981;
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+}
+
+.icono-consulta {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    margin: 23px 0 16px;
+    border-radius: 14px;
+    background: #eaf3ef;
+    color: #398b7d;
+    font-size: 1.45rem;
+}
+
+.tarjeta-consulta h2 {
+    margin: 0 0 10px;
+    color: #21453e;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: -.03em;
+}
+
+.tarjeta-consulta p {
+    flex: 1;
+    margin: 0 0 22px;
+    color: #71847f;
+    font-size: .88rem;
+    line-height: 1.7;
+}
+
+.boton-whatsapp-clinica {
+    display: flex;
+    width: 100%;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 15px;
+    border-radius: 25px;
+    background: #218a70;
+    color: #fff;
+    font-size: .82rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: background .15s, transform .15s;
+}
+
+.boton-whatsapp-clinica:hover {
+    transform: translateY(-1px);
+    background: #176f5a;
+}
+
+.boton-whatsapp-clinica:focus-visible,
+.volver-clinica:focus-visible,
+.marca-clinica:focus-visible {
+    outline: 3px solid #8bc6bc;
+    outline-offset: 4px;
+}
+
+.nota-whatsapp {
+    margin: 20px 0 0;
+    color: #879791;
+    font-size: .77rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.pie-clinica {
+    display: flex;
+    min-height: 90px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: #91a19b;
+    font-size: .75rem;
+}
+
+.pie-clinica a {
+    color: #528078;
+    text-decoration: none;
+}
+
+@media (max-width: 850px) {
+    .consultas-clinica {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .pagina-clinica {
+        padding: 0 5%;
+    }
+
+    .barra-clinica {
+        min-height: 72px;
+    }
+
+    .introduccion-clinica {
+        padding: 48px 0 28px;
+    }
+
+    .introduccion-clinica p {
+        font-size: .92rem;
+    }
+
+    .consultas-clinica {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .tarjeta-consulta {
+        min-height: 300px;
+        padding: 22px;
+    }
+
+    .pie-clinica {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding: 20px 0;
+    }
+}

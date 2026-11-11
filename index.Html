@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- Documento principal de la portada; lang ayuda a lectores de pantalla y buscadores. -->
+<html lang="es">
+<head>
+    <!-- Codificación para que tildes y símbolos se muestren correctamente. -->
+    <meta charset="UTF-8">
+    <!-- Hace que el diseño se adapte al ancho de celulares y tabletas. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Color de la barra del navegador en dispositivos compatibles. -->
+    <meta name="theme-color" content="#f2f7f5">
+    <!-- Descripción que algunos buscadores muestran junto al resultado. Puedes cambiarla al definir el mensaje del centro. -->
+    <meta name="description" content="Entrena en Quinesiomed , agenda tu próxima sesión.">
+    <!-- Texto de la pestaña del navegador. -->
+    <title>Quinesiomed | entrenamiento y rehabilitacion</title>
+    <!-- Hoja de estilos compartida por la portada y la agenda. -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="inicio">
+    <!-- Encabezado: cambia aquí el nombre y los enlaces principales del sitio. -->
+    <header class="barra-inicio">
+        <!-- Aqui va el logo del sitio. -->
+        <a class="logo-inicio" href="index.Html" aria-label="Quinesiomed, inicio">
+             <img class="imagen-logo" src="logo.jpg" alt="Logo de Quinesiomed">
+                <span>Quinesiomed</span>
+        </a>
+        <!-- Los dos primeros enlaces bajan a secciones de esta misma página (#id).
+             El último abre la página de agenda. -->
+        <nav class="nav-inicio" aria-label="Navegación principal">
+            <a href="#profesionales">Profesionales</a>
+            <a href="#terapias">Terapias</a>
+            <a class="nav-agenda" href="./agenda.html">Agendar sesión <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <!-- Contenido principal: las secciones aparecen en el mismo orden que se leen aquí. -->
+    <main>
+        <!-- Presentación principal o hero: título, breve introducción y acceso a la agenda. -->
+        <section class="hero-inicio">
+            <div class="hero-texto">
+                <span class="etiqueta-inicio"><span class="punto-verde"></span> CENTRO QUIROPRÁCTICO</span>
+                <h1>Muévete hacia<br>tu <em>bienestar.</em></h1>
+                <p>Un espacio para acompañarte en la rehabilitación y acondicionamiento. Pronto podrás conocer a nuestro equipo y las terapias disponibles.</p>
+                <div class="acciones-hero">
+                    <a class="boton-inicio" href="#centro">Agendar una sesión <span aria-hidden="true">→</span></a>
+                    <a class="enlace-secundario" href="Clinica.html">Ir a Clinica</a>
+                </div>
+            </div>
+            <!-- La imagen y la tarjeta flotante comparten el contenedor exterior; solo la imagen se recorta. -->
+            <div class="hero-imagen-contenedor">
+                <div class="hero-visual" role="img" aria-label="Profesionales de Quinesiomed">
+                    <img class="imagen-banner" src="./SESSIONESIMG/IMG3.jpeg" alt="Profesionales de Quinesiomed">
+                </div>
+                <div class="tarjeta-flotante">
+                    <span class="mini-icono" aria-hidden="true">✳</span>
+                    <span>Bienestar<br>y rehabilitación</span>
+                </div>
+            </div>
+        </section>
+
+                <!-- Selector de público: clientes actuales o personas que recién conocen el centro. -->
+        
+        <!-- Presentación breve del centro; la flecha lleva a la consulta de sesiones. -->
+        <section class="bloque-centro" id="centro">
+            <div class="bloque-centro-titulo">
+                <span class="etiqueta-inicio">QUINESIOMED</span>
+                <h2>Gestiona tus próximas<br>sesiones aquí.</h2>
+            </div>
+            <p>Si ya eres cliente, puedes consultar tus sesiones o reservar una nueva atención.</p>
+            <a class="flecha-redonda" href="./agenda.html#formulario-usuario" aria-label="Consultar mis sesiones">↗</a>
+        </section>
+        <section class="selector-audiencia" aria-labelledby="titulo-selector">
+            <h2 id="titulo-selector">¿Qué deseas agendar hoy?</h2>
+            <div class="tarjetas-audiencia">
+                <article class="tarjeta-audiencia tarjeta-cliente">
+                    <span class="icono-audiencia" aria-hidden="true">👤</span>
+                    <h3>Ya soy cliente</h3>
+                    <p>Reserva una nueva sesión o consulta tus próximas atenciones.</p>
+                    <a class="boton-audiencia boton-cliente" href="./agenda.html#formulario-reserva">
+                        Agendar una sesión
+                    </a>
+                    <a class="enlace-audiencia" href="./agenda.html#formulario-usuario">
+                        Consultar mis sesiones
+                    </a>
+                </article>
+
+                <article class="tarjeta-audiencia tarjeta-visitante">
+                    <span class="icono-audiencia" aria-hidden="true">▦</span>
+                    <h3>Soy nuevo en Quinesiomed</h3>
+                    <p>Conoce nuestras consultas y solicita información para coordinar una cita.</p>
+                    <a class="boton-audiencia boton-visitante" href="./Clinica.html">
+                        Ver consultas y solicitar cita
+                    </a>
+                </article>
+            </div>
+        </section>
+
+<!-- Presentación de profesionales; la imagen del perfil ocupa el ancho de su tarjeta. -->
+        <section class="seccion-futuro" id="profesionales">
+            <div class="seccion-cabecera">
+                <div><span class="etiqueta-inicio">EL EQUIPO</span><h2>Profesionales</h2></div>
+            </div>
+            <div class="tarjetas-futuro tarjetas-profesionales">
+                <!-- Para sumar un profesional, duplica este article y cambia nombre, texto, imagen y número. -->
+                <article class="tarjeta-futuro tarjeta-profesional">
+                    <div class="contenido-profesional">
+                        <span class="icono-futuro" aria-hidden="true">♧</span>
+                        <div><h3>Lizandro Méndez</h3><p>Quiropráctico de la Universidad Católica.</p></div>
+                    </div>
+                    <img class="imagen-tarjeta" src="./SESSIONESIMG/IMG5.jpg" alt="Lizandro Méndez, quiropráctico">
+                    <span class="numero-tarjeta">01</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Carrusel horizontal de terapias: duplica una tarjeta para agregar otro servicio al desplazamiento. -->
+        <section class="seccion-futuro seccion-terapias" id="terapias" aria-labelledby="titulo-terapias">
+            <div class="seccion-cabecera">
+                <div><span class="etiqueta-inicio">ATENCIÓN Y MOVIMIENTO</span><h2 id="titulo-terapias">Terapias y servicios</h2></div>
+                <span class="proximamente">DESLIZA PARA EXPLORAR</span>
+            </div>
+            <div class="tarjetas-terapia-scroll" tabindex="0" role="region" aria-label="Tarjetas de terapias; desplázate horizontalmente para ver más">
+                <!-- Tarjeta de ejemplo: cambia título, descripción e icono por información confirmada del centro. -->
+                <article class="tarjeta-terapia">
+                    <span class="numero-terapia">TERAPIA 01</span>
+                    <span class="icono-terapia-card" aria-hidden="true">✳</span>
+                    <h3>Atención quiropráctica</h3>
+                    <p>Describe aquí en qué consiste esta atención, su duración y a quién está dirigida.</p>
+                </article>
+                <article class="tarjeta-terapia">
+                    <span class="numero-terapia">TERAPIA 02</span>
+                    <span class="icono-terapia-card" aria-hidden="true">⌁</span>
+                    <h3>Rehabilitación</h3>
+                    <p>Agrega información clara sobre el servicio y qué puede esperar una persona en la sesión.</p>
+                </article>
+                <article class="tarjeta-terapia">
+                    <span class="numero-terapia">TERAPIA 03</span>
+                    <span class="icono-terapia-card" aria-hidden="true">↗</span>
+                    <h3>Acondicionamiento físico</h3>
+                    <p>Reemplaza este texto con los detalles y objetivos del servicio que ofrece el centro.</p>
+                </article>
+            </div>
+            <p class="ayuda-scroll">En computador, usa la rueda del mouse o la barra inferior. En celular, desliza las tarjetas hacia los lados.</p>
+        </section>
+
+        <!-- Llamado final a reservar; conserva un acceso visible al calendario. -->
+        <section class="cierre-inicio">
+            <div><span class="etiqueta-inicio">RESERVA TU HORARIO</span><h2>¿Agendamos tu sesión?</h2></div>
+            <a class="boton-inicio boton-claro" href="#centro">Ir a la agenda <span aria-hidden="true">→</span></a>
+        </section>
+    </main>
+
+    <!-- Pie de página: aquí puedes sumar contacto, redes sociales, dirección y horarios. -->
+    <footer class="pie-inicio"><a class="logo-inicio" href="index.Html">
+    
+        <span  aria-hidden="true"></span><span>Quinesiomed</span></a><span>Centro quiropráctico <span aria-hidden="true">·</span>+56 9 6632 6371 <span aria-hidden="true">·</span><a class="acceso-secretaria" href="./secretaria.html">Acceso secretaria</a></footer>
+</body>
+</html>
+
