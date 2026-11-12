@@ -25,7 +25,7 @@
             <p>Conoce brevemente nuestras áreas de atención. Si quieres reservar, escríbenos por WhatsApp y te ayudaremos a coordinar una hora.</p>
         </section>
 
-        <section class="consultas-clinica" aria-label="Tipos de consulta">
+        <section class="consultas-clinica" role="region" aria-label="Carrusel de tipos de consulta" tabindex="0">
             <article class="tarjeta-consulta">
                 <span class="numero-consulta">CONSULTA 01</span>
                 <span class="icono-consulta" aria-hidden="true">✳</span>
@@ -64,6 +64,8 @@
                    target="_blank" rel="noopener noreferrer">
                     Solicitar cita por WhatsApp
                 </a>
+                <br>
+                <img class="imagen-tarjeta" src="./SESSIONESIMG/Fondoquiropraxia.jpeg" alt="Imagen de acondicionamiento físico">
             </article>
 
               <article class="tarjeta-consulta">
@@ -81,12 +83,16 @@
             </article>
         </section>
 
+        <p class="ayuda-carrusel">Las tarjetas avanzan cada 3 segundos. También puedes desplazarlas manualmente.</p>
         <p class="nota-whatsapp">Al pulsar el botón se abrirá WhatsApp con un mensaje preparado. Revísalo y envíalo para solicitar tu cita.</p>
     </main>
 
     <footer class="pie-clinica">
         <a href="./index.Html">Quinesiomed</a>
         <span>Centro quiropráctico · Atención con reserva previa</span>
-    </footer>
+    <footer class="pie-inicio"><a class="logo-inicio" href="index.Html">
+    
+        <span  aria-hidden="true"></span><span>Quinesiomed</span></a><span>Centro quiropráctico <span aria-hidden="true">·</span>+56 9 6632 6371 <span aria-hidden="true">·</span><a class="acceso-secretaria" href="./secretaria.html">Acceso secretaria</a></footer>
+    <script src="./clinica.js" defer></script>
 </body>
 </html>

@@ -222,3 +222,69 @@
         padding: 20px 0;
     }
 }
+
+/* Carrusel horizontal de tratamientos. Cada tarjeta ocupa parte del ancho para indicar que hay más contenido. */
+.consultas-clinica {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(280px, 46%);
+    grid-template-columns: none;
+    gap: 18px;
+    align-items: stretch;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 8px 4px 18px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-color: #8bb9ae #e7efeb;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+}
+
+.consultas-clinica > .tarjeta-consulta {
+    scroll-snap-align: start;
+}
+
+.ayuda-carrusel {
+    margin: 4px 0 0;
+    color: #71847f;
+    font-size: .78rem;
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    .consultas-clinica {
+        grid-auto-columns: minmax(280px, 68%);
+        grid-template-columns: none;
+    }
+}
+
+@media (max-width: 620px) {
+    .consultas-clinica {
+        grid-auto-columns: 88%;
+        grid-template-columns: none;
+        gap: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .consultas-clinica {
+        scroll-behavior: auto;
+    }
+}
+/* Las imágenes con precios se muestran completas, sin recortar su contenido. */
+.tarjeta-consulta {
+    height: auto;
+    min-height: 0;
+}
+
+.imagen-tarjeta {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+    margin-top: 14px;
+    border-radius: 10px;
+}

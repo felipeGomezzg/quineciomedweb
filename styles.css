@@ -519,3 +519,17 @@ body.inicio { min-height: 100vh; padding: 0 6.5%; background: #f5f8f6; color: #1
         padding: 24px 18px;
     }
 }
+/* En las tarjetas de terapias, las imágenes con precios se muestran completas. */
+.tarjeta-terapia .imagen-tarjeta {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+    margin-top: 14px;
+}
+
+.tarjeta-terapia {
+    height: auto;
+    min-height: 0;
+}
