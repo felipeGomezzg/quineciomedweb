@@ -533,3 +533,29 @@ body.inicio { min-height: 100vh; padding: 0 6.5%; background: #f5f8f6; color: #1
     height: auto;
     min-height: 0;
 }
+/* Interfaz de configuración de planes y bloques de clases grupales. */
+.selector-clase-grupal, .gestion-horarios-grupales { padding: 20px; border: 1px solid #dce9e3; border-radius: 14px; background: #f8fbf9; }
+.selector-clase-grupal { margin: 0 0 18px; }
+.selector-clase-grupal h3, .gestion-horarios-grupales h2 { margin: 0 0 12px; color: #21453e; }
+.selector-clase-grupal label, .formulario-bloque-grupal label { display: grid; gap: 7px; color: #45645d; font-size: .86rem; font-weight: 600; }
+.selector-clase-grupal select, .formulario-bloque-grupal input, .formulario-bloque-grupal select { width: 100%; min-height: 44px; padding: 9px 11px; border: 1px solid #cddbd5; border-radius: 8px; background: #fff; color: #193d3a; font: inherit; }
+#opciones-grupales { display: grid; gap: 10px; margin-top: 14px; }
+.ayuda-grupal, .aviso-grupos-local { color: #71847f; font-size: .82rem; line-height: 1.6; }
+.gestion-horarios-grupales { margin: 22px 0; }
+.cabecera-grupos p, .gestion-horarios-grupales > p { max-width: 700px; color: #71847f; line-height: 1.6; }
+.formulario-bloque-grupal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 18px 0 26px; }
+.formulario-bloque-grupal button { align-self: end; min-height: 44px; }
+#mensaje-bloque-grupal { grid-column: 1 / -1; margin: 0; color: #397d72; }
+.lista-bloques-grupales { display: grid; gap: 10px; padding: 0; list-style: none; }
+.bloque-grupal-item { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px; border: 1px solid #dce9e3; border-radius: 10px; background: #fff; }
+.bloque-grupal-item > div { display: grid; gap: 5px; min-width: 0; }
+.bloque-grupal-item span { color: #71847f; font-size: .82rem; line-height: 1.5; }
+.bloque-grupal-item button { flex: 0 0 auto; padding: 9px 12px; border: 1px solid #d8e5df; border-radius: 8px; background: #fff; color: #8b3c3c; cursor: pointer; }
+.sin-bloques { color: #71847f; }
+@media (max-width: 700px) { .formulario-bloque-grupal { grid-template-columns: 1fr 1fr; } .bloque-grupal-item { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 440px) { .formulario-bloque-grupal { grid-template-columns: 1fr; } }
+.selector-clase-grupal [hidden], #formulario-reserva .campos-horario[hidden] { display: none !important; }
+
+/* Gestión interna de cuentas de alumnos y clases contratadas. */
+.gestion-cuentas-alumnos{margin:22px 0;padding:22px;border:1px solid #dce9e3;border-radius:14px;background:#f8fbf9}.gestion-cuentas-alumnos h2{margin:8px 0;color:#21453e}.gestion-cuentas-alumnos>p{max-width:720px;color:#71847f;line-height:1.6}.form-cuenta-alumno{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}.form-cuenta-alumno>label{display:grid;gap:7px;color:#45645d;font-size:.86rem;font-weight:600}.form-cuenta-alumno input,.form-cuenta-alumno select{width:100%;min-height:44px;padding:9px 11px;border:1px solid #cddbd5;border-radius:8px;background:#fff;color:#193d3a;font:inherit}.campo-clave-temporal{display:flex;gap:7px}.campo-clave-temporal button{padding:8px 12px;border:1px solid #d8e5df;border-radius:8px;background:#fff;color:#397d72;cursor:pointer}.form-cuenta-alumno>button{align-self:end;min-height:44px}.form-cuenta-alumno>p{grid-column:1/-1;margin:0;color:#397d72;overflow-wrap:anywhere}.lista-cuentas-alumnos{display:grid;gap:9px;padding:0;list-style:none}.cuenta-alumno-item{padding:13px;border:1px solid #dce9e3;border-radius:9px;background:#fff}.cuenta-alumno-item div{display:grid;gap:4px}.cuenta-alumno-item span{color:#71847f;font-size:.84rem}.resumen-cupos-semana{padding:12px;border-radius:9px;background:#f0f6f3;color:#397d72;font-weight:700}
+@media(max-width:600px){.form-cuenta-alumno{grid-template-columns:1fr}}

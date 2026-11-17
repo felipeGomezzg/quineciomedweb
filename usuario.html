@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f2f7f5">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Mi cuenta | Quinesiomed</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="usuario.css">
+</head>
+<body class="pagina-usuario">
+    <main class="contenedor-usuario">
+        <header class="cabecera-usuario">
+            <a href="./index.html" class="marca-usuario">
+                <img src="./logo.jpg" alt="">
+                <span>Quinesiomed</span>
+            </a>
+            <a href="./Clinica.html">↪Ver terapias</a>
+            <a href="./index.html" class="volver-usuario">↻Volver al inicio</a>
+        </header>
+<section id="vista-cuenta" class="tarjeta-cuenta"><span class="etiqueta-inicio">ÁREA DE SOCIOS</span><h1>Tu espacio Quinesiomed</h1><p class="introduccion-cuenta">Ingresa con el RUT y la contraseña que te entregó secretaría.</p>
+<form id="formulario-entrar" class="formulario-cuenta"><label for="rut-entrar">RUT</label><input id="rut-entrar" name="rut" inputmode="text" autocomplete="off" placeholder="12.345.678-5" maxlength="12" required><label for="clave-entrar">Contraseña</label><input id="clave-entrar" name="clave" type="password" autocomplete="current-password" required><button class="boton-cuenta" type="submit">Entrar a mi cuenta</button><p id="mensaje-entrar" class="mensaje-cuenta" role="status" aria-live="polite"></p></form>
+<p class="aviso-cuenta-demo"><strong>Prototipo local:</strong> solo secretaría genera las cuentas. Los datos viven en este navegador y no son una protección adecuada para cuentas reales. Para habilitar el acceso privado desde distintos dispositivos, habrá que conectar un servidor.</p></section>
+<section id="vista-mi-cuenta" class="tarjeta-cuenta panel-mi-cuenta" hidden><div class="encabezado-mi-cuenta"><div><span class="etiqueta-inicio">TU CUENTA</span><h1>Hola, <span id="nombre-cuenta"></span></h1><p>Información de tu plan grupal.</p></div><button id="cerrar-cuenta" class="boton-secundario-cuenta" type="button">Cerrar sesión</button></div>
+<article class="resumen-plan"><span>Plan grupal asignado por secretaría</span><strong id="plan-cuenta"></strong><p id="detalle-plan-cuenta"></p><div id="accesos-grupos" class="accesos-grupos"></div></article><div class="acciones-cuenta"><a id="enlace-reservar-grupal" class="boton-cuenta" href="./agenda.html">Ver horarios disponibles</a><a href="./agenda.html#formulario-usuario" class="enlace-cuenta">Consultar sesiones</a></div>
+<h2>Cambiar contraseña</h2><form id="form-cambiar-clave" class="formulario-cuenta"><label for="clave-actual">Contraseña actual</label><input id="clave-actual" name="actual" type="password" autocomplete="current-password" required><label for="clave-nueva">Nueva contraseña (mínimo 10 caracteres)</label><input id="clave-nueva" name="nueva" type="password" autocomplete="new-password" minlength="10" required><label for="clave-nueva-confirmar">Confirma la nueva contraseña</label><input id="clave-nueva-confirmar" name="confirmar" type="password" autocomplete="new-password" minlength="10" required><button class="boton-cuenta" type="submit">Actualizar contraseña</button><p id="mensaje-cambio-clave" class="mensaje-cuenta" role="status" aria-live="polite"></p></form><h2>Mis reservas de esta semana</h2><p id="resumen-cupos-semana" class="resumen-cupos-semana"></p><ul id="reservas-cuenta" class="reservas-cuenta"></ul><p id="sin-reservas-cuenta" class="sin-reservas-cuenta" hidden>No encontramos reservas de esta semana asociadas a esta cuenta.</p><p class="aviso-cuenta-demo"><strong>Demostración:</strong> las reservas se leen desde este navegador.</p></section>
+<footer class="pie-usuario">
+    <span>Quinesiomed · Atención con reserva previa  <a> +56 9 6632 6371 </a> </span>
+</footer></main> 
+   <script src="./rut-utils.js"></script>
+<script src="./usuario.js" defer></script></body></html>

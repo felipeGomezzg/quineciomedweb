@@ -118,6 +118,16 @@ async function solicitarServidor(url, opciones = {}) {
     return respuesta.status === 204 ? null : respuesta.json();
 }
 
+// Los bloques grupales se guardan por ahora en este navegador; un servidor reemplazará esta lectura local.
+const GROUP_SCHEDULE_KEY = 'quinesiomed-bloques-grupales-v1';
+function leerBloquesGrupales() {
+    try {
+        const bloques = JSON.parse(localStorage.getItem(GROUP_SCHEDULE_KEY) || '[]');
+        return Array.isArray(bloques) ? bloques.filter(bloque => bloque && typeof bloque.id === 'string') : [];
+    } catch {
+        return [];
+    }
+}
 // Adaptador: la interfaz utiliza los mismos métodos sin importar dónde se guardan las reservas.
 // En modo "server", cada método llama a una ruta HTTP. El servidor debe autorizar cada operación.
 const agendaService = AGENDA_CONFIG.mode === 'server' ? {
@@ -147,7 +157,35 @@ const agendaService = AGENDA_CONFIG.mode === 'server' ? {
         listar: async () => reservasLocales,
         // Rechaza una hora ya ocupada, crea un identificador simple y guarda la lista actualizada.
         reservar: async datos => {
-            if (reservasLocales.some(reserva => reserva.fecha === datos.fecha && reserva.hora === datos.hora)) {
+            if (datos.tipoSesion === 'grupal' && datos.grupoSlotId) {
+                let cuentas = [];
+                try { cuentas = JSON.parse(localStorage.getItem('quinesiomed-cuentas-demo-v1') || '[]'); } catch { cuentas = []; }
+                const cuenta = cuentas.find(item => item.username === datos.usuarioCuenta);
+                const gruposCuenta = cuenta && Array.isArray(cuenta.grupos) ? cuenta.grupos : cuenta?.plan ? [cuenta.plan] : [];
+                if (!cuenta || !gruposCuenta.includes(datos.planGrupo) || Number(cuenta.weeklyClasses) < 1) {
+                    const error = new Error('Tu cuenta no tiene este plan o una cantidad de clases semanales asignada. Contacta a secretaría.');
+                    error.status = 403;
+                    throw error;
+                }
+                const inicioSemana = fecha => {
+                    const dia = new Date(`${fecha}T12:00:00`);
+                    dia.setDate(dia.getDate() - ((dia.getDay() + 6) % 7));
+                    return `${dia.getFullYear()}-${String(dia.getMonth() + 1).padStart(2, '0')}-${String(dia.getDate()).padStart(2, '0')}`;
+                };
+                const clasesSemana = reservasLocales.filter(reserva => reserva.usuarioCuenta === datos.usuarioCuenta && reserva.tipoSesion === 'grupal' && inicioSemana(reserva.fecha) === inicioSemana(datos.fecha)).length;
+                if (clasesSemana >= Number(cuenta.weeklyClasses)) {
+                    const error = new Error('Ya usaste todas las clases grupales contratadas para esa semana. Elige otra semana o consulta con secretaría.');
+                    error.status = 403;
+                    throw error;
+                }
+                const bloque = leerBloquesGrupales().find(item => item.id === datos.grupoBloqueId && item.plan === datos.planGrupo);
+                const ocupados = reservasLocales.filter(reserva => reserva.tipoSesion === 'grupal' && reserva.grupoSlotId === datos.grupoSlotId).length;
+                if (!bloque || ocupados >= Number(bloque.cupos)) {
+                    const error = new Error('Ese bloque grupal ya no tiene cupos disponibles. Elige otro horario.');
+                    error.status = 409;
+                    throw error;
+                }
+            } else if (reservasLocales.some(reserva => reserva.fecha === datos.fecha && reserva.hora === datos.hora)) {
                 const error = new Error('Ese horario ya está reservado. Elige otra hora.');
                 error.status = 409;
                 throw error;
@@ -378,10 +416,16 @@ formulario.addEventListener('submit', async evento => {
             nombre: nombreInput.value.trim(),
             telefono: telefonoInput.value.trim(),
             fecha,
-            hora
+            hora,
+            tipoSesion: formulario.dataset.tipoSesion || 'individual',
+            planGrupo: formulario.dataset.planGrupo || '',
+            usuarioCuenta: sessionStorage.getItem('quinesiomed-usuario-activo-v1') || '',
+            grupoBloqueId: formulario.dataset.grupoBloqueId || '',
+            grupoSlotId: formulario.dataset.grupoSlotId || ''
         };
         if (AGENDA_CONFIG.mode === 'local') datosReserva.rut = rut; // Solo la demostración guarda el RUT junto a la cita.
         await agendaService.reservar(datosReserva);
+        window.dispatchEvent(new Event('quinesiomed:reserva-guardada'));
         rutActual = rut;
         rutUsuarioInput.value = rut;
         reservas = await agendaService.listar();

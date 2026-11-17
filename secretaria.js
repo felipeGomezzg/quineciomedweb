@@ -6,7 +6,7 @@ const CLAVE_SESION = 'quinesiomed-secretaria-activa-v1';
 
 // Cuenta temporal solo para presentar el flujo mientras la web funciona sin servidor.
 // Estas credenciales están visibles en el código y no sirven para proteger pacientes reales.
-const CUENTA_TEMPORAL = Object.freeze({ usuario: 'secretaria', clave: 'JJuanalcachofa' });
+const CUENTA_TEMPORAL = Object.freeze({ usuario: 'secretaria', clave: 'Quinesiomed-Temporal-2026!' });
 
 // Elementos de interfaz: hay una vista de acceso, cambio obligatorio de clave y panel de sesiones.
 const vistaAcceso = document.querySelector('#vista-acceso');
